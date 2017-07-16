@@ -1,0 +1,21 @@
+{% extends "search/header.html" %}
+
+{% block content %}
+	<!-- Data | JSON needs to be parsed to make JS Object -->
+	<meta id="testerData" data-data="{{ json }}">
+	<div class="container container-table">
+		<div class="row vertical-center-row">
+			{% include "search/includes/searchBox.html" %}
+		</div>
+	</div>
+	<div class="container container-table text-center">
+		<div class="row vertical-center-row">
+			{% include "search/includes/searchResults.html" %}
+		</div>
+	</div>
+	<div class="container container-table text-center">
+		<div class="row vertical-center-row">
+			{% include "search/includes/disclaimer.html" %}
+		</div>
+	</div>
+{% endblock %}

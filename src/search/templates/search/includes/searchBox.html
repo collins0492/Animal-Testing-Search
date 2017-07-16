@@ -1,0 +1,19 @@
+<div class="text-center pad-top">
+	<h1 class="title">
+		<span class="glyphicon glyphicon-leaf"></span><br>
+		Animal Testing Search
+	</h1>
+	<p class="tag-line">Find animal friendly brands</p>
+</div>
+<form ng-controller="TypeaheadCtrl">
+	<div class="col-md-4 col-md-offset-4"> <!-- input-group -->
+		<div id="thumb" class="thumb"></div>
+		<div id="searchResults" class="searchResults hide"></div>
+		<input type="text" class="form-control has-warning" id="inputSearch" placeholder="Search..." title="Search for a brand" ng-model="selected" uib-typeahead="company as company.company + company.parent for company in companies | filter: {company:$viewValue} | limitTo: 5" autocomplete="off" typeahead-on-select="searchResults();">
+		<!-- redundant
+		<div class="input-group-btn">
+			<button type="submit" class="btn btn-primary" disabled>Go</button>
+		</div>
+		-->
+	</div>
+</form>
